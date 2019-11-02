@@ -41,7 +41,7 @@ end
 unless videos.empty?
   videos.sort_by{ |f| File.birthtime(f) }.each do |movie|
     renamed = File.new(movie).birthtime.to_s.split(' ')[0].gsub("-",'') + "_#{last_movie.next!}#{File.extname(movie)}"
-    FileUtils.mv(movie,"#{EXPORT}#{renamed}")
+    FileUtils.mv(movie,"#{EXPORT}movies/#{renamed}")
   end
 else
   puts "No videos found."
