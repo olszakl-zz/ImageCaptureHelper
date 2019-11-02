@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'FileUtils'
-require 'optparse'
 
 year = "2019"
 images = []
