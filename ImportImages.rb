@@ -2,7 +2,7 @@
 
 require 'FileUtils'
 
-year = "2019"
+year = "2020"
 images = []
 videos = []
 
