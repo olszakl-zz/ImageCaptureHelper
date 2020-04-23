@@ -30,7 +30,7 @@ end
 
 unless images.empty?
   images.sort_by{ |f| File.birthtime(f) }.each do |image|
-    renamed = File.new(image).birthtime.to_s.split(' ')[0].gsub("-",'') + "_export_#{last_image.next!}#{File.extname(image)}"
+    renamed = File.new(image).birthtime.to_s.split(' ')[0].gsub("-",'') + "_export_#{last_image.next!}#{File.extname(image).upcase}"
     FileUtils.mv(image,"#{EXPORT}#{renamed}")
   end
 else
@@ -39,7 +39,7 @@ end
 
 unless videos.empty?
   videos.sort_by{ |f| File.birthtime(f) }.each do |movie|
-    renamed = File.new(movie).birthtime.to_s.split(' ')[0].gsub("-",'') + "_#{last_movie.next!}#{File.extname(movie)}"
+    renamed = File.new(movie).birthtime.to_s.split(' ')[0].gsub("-",'') + "_#{last_movie.next!}#{File.extname(movie).upcase}"
     FileUtils.mv(movie,"#{EXPORT}movies/#{renamed}")
   end
 else
